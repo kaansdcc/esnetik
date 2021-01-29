@@ -1,11 +1,13 @@
-const Discord = require('discord.js')
-const db = require('quick.db') 
-const client = new Discord.Client({ disableEveryone: true })
-const fetch = require('node-fetch')
-const fs = require('fs')
-require('express')().listen(1343)
-const moment = require('moment')
-require('moment-duration-format')
+const discord = require("discord.js");
+const fs = require("fs");
+const http = require("http");
+const db = require("quick.db");
+const moment = require("moment");
+const express = require("express");
+const Discord = require("discord.js");
+const fetch = require('node-fetch');
+const app = express();
+const client = new Discord.Client();
 const prefix = '!'
 
 setInterval(() => {
@@ -36,7 +38,7 @@ client.on('message', async message => {
   if(Split[0] == prefix+'ekle') {
   var Link = Split[1]
   fetch(Link).then(() => {
-    const Revenge = new Discord.RichEmbed()
+    const Revenge = new Discord.MessageEmbed()
     .setColor('RED')
     .setDescription(`
     **==================================**
@@ -44,11 +46,11 @@ client.on('message', async message => {
     ==================================
     `)
     .setTimestamp()
-    .setThumbnail(message.author.avatarURL)
+    .setThumbnail(message.author.avatarURL())
     if(db.get('Linkler').map(Revenge => Revenge.url).includes(Link)) return message.channel.send(Revenge)
-    const Emrecan = new Discord.RichEmbed()
+    const Emrecan = new Discord.MessageEmbed()
     .setColor('GREEN')
-    .setThumbnail(message.author.avatarURL)
+    .setThumbnail(message.author.avatarURL())
     .setDescription(`
     **==================================**
     **Yazdığınız URL Başarıyla Eklendi. ✅**
@@ -61,7 +63,7 @@ client.on('message', async message => {
     db.push(`Projesi_${message.author.id}`,Link)
     db.add(`Proje`,1)
   }).catch(Hata => {
-  const UpTime = new Discord.RichEmbed()
+  const UpTime = new Discord.MessageEmbed()
   .setColor('RED')
   .setDescription(`
   **==================================**
@@ -72,13 +74,13 @@ client.on('message', async message => {
   `)
   .setImage('https://i.hizliresim.com/9naFeE.png')
   .setTimestamp()
-  .setThumbnail(message.author.avatarURL)
+  .setThumbnail(message.author.avatarURL())
   message.channel.send(UpTime)
   })
   }
 
   if(Split[0] == prefix+'davet') {
-  const Revo = new Discord.RichEmbed()
+  const Revo = new Discord.MessageEmbed()
   .setColor('#20aaba')
   .setDescription(`
   **==================================
@@ -91,37 +93,36 @@ Beni Sunucuna Eklemek Istemen Beni Sevindiriyor Hemen Altta Linkimi Bula Bilirsi
 [Oy Vermeyi Unutma](https://top.gg/bot/782250000901341204/vote)
 ==================================
 **`)
-  .setThumbnail(message.author.avatarURL)
+  .setThumbnail(message.author.avatarURL())
   message.channel.send(Revo)
   }
 
   if(Split[0] == prefix+'i') {
-  const Istatistik = new Discord.RichEmbed()
+  const Istatistik = new Discord.MessageEmbed()
   .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL)
+  .setThumbnail(message.author.avatarURL())
   .setTimestamp()
   .setDescription(`
 **==================================**
 **✅ » Isim -** __${client.user.username}__
 **✅ » Kanal Sayısı -** __${client.channels.size}__
-**✅ » Sunucu Sayısı -** __${client.guilds.size}__
-**✅ » Kullanıcı Sayısı -** __${client.guilds.reduce((a,b) => a + b.memberCount,0).toLocaleString()}__
+**✅ » Sunucu Sayısı -** __${client.guilds.cache.size}__
+**✅ » Kullanıcı Sayısı -** __${client.guilds.cache.reduce((a,b) => a + b.memberCount,0).toLocaleString()}__
 **✅ » Link Sayısı -** __${await db.fetch('Proje') || 1}__
-**✅ » Aktiflik Suresi -** __${moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]")}__
 **==================================**`)
 message.channel.send(Istatistik)
   }
   if(Split[0] == prefix+'istatistik') {
-  const Istatistik = new Discord.RichEmbed()
+  const Istatistik = new Discord.MessageEmbed()
   .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL)
+  .setThumbnail(message.author.avatarURL())
   .setTimestamp()
   .setDescription(`
 **==================================**
 **✅ » Isim -** __${client.user.username}__
 **✅ » Kanal Sayısı -** __${client.channels.size}__
-**✅ » Sunucu Sayısı -** __${client.guilds.size}__
-**✅ » Kullanıcı Sayısı -** __${client.guilds.reduce((a,b) => a + b.memberCount,0).toLocaleString()}__
+**✅ » Sunucu Sayısı -** __${client.guilds.cache.size}__
+**✅ » Kullanıcı Sayısı -** __${client.guilds.cache.reduce((a,b) => a + b.memberCount,0).toLocaleString()}__
 **✅ » Link Sayısı -** __${await db.fetch('Proje') || 1}__
 **✅ » Aktiflik Suresi -** __${moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]")}__
 **==================================**`)
@@ -129,9 +130,9 @@ message.channel.send(Istatistik)
   }
 
   if(Split[0] == prefix+'s') {
-  const Revoş = new Discord.RichEmbed()
+  const Revoş = new Discord.MessageEmbed()
   .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL)
+  .setThumbnail(message.author.avatarURL())
   .setTimestamp()
   .setDescription(`
   ==================================
@@ -142,9 +143,9 @@ message.channel.send(Istatistik)
   message.channel.send(Revoş)
   }
   if(Split[0] == prefix+'say') {
-  const Revoş = new Discord.RichEmbed()
+  const Revoş = new Discord.MessageEmbed()
   .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL)
+  .setThumbnail(message.author.avatarURL())
   .setTimestamp()
   .setDescription(`
   ==================================
@@ -156,11 +157,11 @@ message.channel.send(Istatistik)
   }
 
   if(Split[0] == prefix+'yardım') {
-  const HugoMugo = new Discord.RichEmbed()
+  const HugoMugo = new Discord.MessageEmbed()
   .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL)
+  .setThumbnail(message.author.avatarURL())
   .setTimestamp()
-  .setAuthor(client.user.username,client.user.avatarURL)
+  .setAuthor(client.user.username,client.user.avatarURL())
   .setDescription(`
 
 **<a:BeratBulbulkrmzyldz:786584071248805898> » Prefixim: ${prefix}**
@@ -183,11 +184,11 @@ message.channel.send(Istatistik)
   }
 
   if(Split[0] == '<@782250000901341204>') {
-  const HugoMugo = new Discord.RichEmbed()
+  const HugoMugo = new Discord.MessageEmbed()
   .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL)
+  .setThumbnail(message.author.avatarURL())
   .setTimestamp()
-  .setAuthor(client.user.username,client.user.avatarURL)
+  .setAuthor(client.user.username,client.user.avatarURL())
   .setDescription(`
 
 **<a:BeratBulbulkrmzyldz:786584071248805898> » Prefixim: ${prefix}**
@@ -215,16 +216,16 @@ if (message.content === '20+11 s+j') {
 
     if(Split[0] == prefix+'linkler') {
     const Linkleri = db.fetch(`Projesi_${message.author.id}`)
-    if (!db.get('Linkler').map(Revenge => Revenge.owner).includes(message.author.id)) return message.channel.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**Hiç link eklememişsin. Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
-    message.channel.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**Uptime Etmekte Olduğun Linkler Direkt Mesajlarına Gönderildi . Direkt mesajlarını kontrol et.  ${message.author}**`).setThumbnail(message.author.avatarURL))
-    message.author.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**» Normal Linklerin:** \n\n\``+Linkleri.join('\n')+`\``).setThumbnail(message.author.avatarURL))
+    if (!db.get('Linkler').map(Revenge => Revenge.owner).includes(message.author.id)) return message.channel.send(new Discord.MessageEmbed().setColor('#20aaba').setDescription(`**Hiç link eklememişsin. Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
+    message.channel.send(new Discord.MessageEmbed().setColor('#20aaba').setDescription(`**Uptime Etmekte Olduğun Linkler Direkt Mesajlarına Gönderildi . Direkt mesajlarını kontrol et.  ${message.author}**`).setThumbnail(message.author.avatarURL()))
+    message.author.send(new Discord.MessageEmbed().setColor('#20aaba').setDescription(`**» Normal Linklerin:** \n\n\``+Linkleri.join('\n')+`\``).setThumbnail(message.author.avatarURL()))
     }
 
 
     if(Split[0] == prefix+'erişim-kontrol') {
-const Megenge = new Discord.RichEmbed()
+const Megenge = new Discord.MessageEmbed()
 .setColor('#20aaba')
-.setThumbnail(message.author.avatarURL)
+.setThumbnail(message.author.avatarURL())
 .setTimestamp()
 .setTitle('🎈 Erişim Kontrol')
 .setDescription('**» Erişiminiz Aktif**')
@@ -279,4 +280,4 @@ client.on("message", async message => {
 const Log = message => {
 console.log(`${message}`)
 }
-client.login('')
+client.login('ODAzOTkwNDg1MjY5ODcyNjcw.YBF0fQ.1dUWbtXv3gCGlX1fy_BQDQ6NK-E')
