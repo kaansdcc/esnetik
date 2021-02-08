@@ -93,21 +93,24 @@ client.on('message', async message => {
   .setAuthor(client.user.username,client.user.avatarURL())
   .setDescription(`
 
-**<a:BeratBulbulkrmzyldz:786584071248805898> » Prefixim: ${prefix}**
+**<a:BeratBulbulkrmzyldz:786584071248805898> Prefixim: ${prefix}**
 
 `)
   .addField('**» Komutlar**',`
 
-<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}ekle](https://discord.gg/FAchvKXF9r) Link Eklemenize Yarar
-<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}erişim-kontrol](https://discord.gg/FAchvKXF9r) Erişim Kontrol
-<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}linkler](https://discord.gg/FAchvKXF9r) Linklerinizi Gösterir
+<a:BeratBulbulkrmzyldz:786584135762051103> >[${prefix}ekle](https://discord.gg/FAchvKXF9r) Link Eklemenize Yarar
+<a:BeratBulbulkrmzyldz:786584135762051103> >[${prefix}linkler](https://discord.gg/FAchvKXF9r) Linklerinizi Gösterir
 `)
   .addField('**Hakkında**',`
   Bu Bot Botlarınızı 7/24 Yapmaya Yarar
   VDS Olmadan Bunu Yapabilir
   __7/24 Ücretsizdir!__
 
-<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}Eklemek İçin](https://discord.com/oauth2/authorize?client_id=782250000901341204&permissions=8&scope=bot)
+
+Bot glitch sitelerinin 7/24 açık çalışmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar herhangi bir bakım gerektirmeden 7/24 çalışır.
+
+> <a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}Destek Server](https://discord.gg/Bsq9XtBWYV)
+> <a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}Eklemek İçin](https://discord.com/oauth2/authorize?client_id=782250000901341204&permissions=8&scope=bot)
 `)
   message.channel.send(HugoMugo)
   }
@@ -209,4 +212,4 @@ client.on("message", async message => {
 const Log = message => {
 console.log(`${message}`)
 }
-client.login('ODAzOTkwNDg1MjY5ODcyNjcw.YBF0fQ.1dUWbtXv3gCGlX1fy_BQDQ6NK-E')
+client.login('ODA3MTkxMzgyNTQ0MDg5MTI4.YB0Zjg.qiXQfa6UVOgfxIJ4WB00uHp6XN0')
