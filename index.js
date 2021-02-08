@@ -41,9 +41,7 @@ client.on('message', async message => {
     const Revenge = new Discord.MessageEmbed()
     .setColor('RED')
     .setDescription(`
-    **==================================**
     **Link Sistemde Zaten Bulunuyor. ❌** 
-    ==================================
     `)
     .setTimestamp()
     .setThumbnail(message.author.avatarURL())
@@ -52,7 +50,6 @@ client.on('message', async message => {
     .setColor('GREEN')
     .setThumbnail(message.author.avatarURL())
     .setDescription(`
-    **==================================**
     **Yazdığınız URL Başarıyla Eklendi. ✅**
     `)
     .addField(prefix+'linkler','Komutunu Kullanarak Ekledigin Linklere Erisebilirsin')
@@ -66,11 +63,8 @@ client.on('message', async message => {
   const UpTime = new Discord.MessageEmbed()
   .setColor('RED')
   .setDescription(`
-  **==================================**
-  **Hata: ${Hata} ❌**
-
   **Lutfen Bir URL Girin**
-  ==================================
+
   `)
   .setImage('https://i.hizliresim.com/9naFeE.png')
   .setTimestamp()
@@ -83,77 +77,12 @@ client.on('message', async message => {
   const Revo = new Discord.MessageEmbed()
   .setColor('#20aaba')
   .setDescription(`
-  **==================================
-Beni Sunucuna Eklemek Istemen Beni Sevindiriyor Hemen Altta Linkimi Bula Bilirsin Sen Olmassan 1 kisi eksik
-
 [Ekleme Linkim](https://discord.com/api/oauth2/authorize?client_id=782250000901341204&permissions=8&scope=bot)
-
 [Destek Sunucum](https://discord.gg/8JRafVmUqQ)
-
 [Oy Vermeyi Unutma](https://top.gg/bot/782250000901341204/vote)
-==================================
-**`)
+`)
   .setThumbnail(message.author.avatarURL())
   message.channel.send(Revo)
-  }
-
-  if(Split[0] == prefix+'i') {
-  const Istatistik = new Discord.MessageEmbed()
-  .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL())
-  .setTimestamp()
-  .setDescription(`
-**==================================**
-**✅ » Isim -** __${client.user.username}__
-**✅ » Kanal Sayısı -** __${client.channels.size}__
-**✅ » Sunucu Sayısı -** __${client.guilds.cache.size}__
-**✅ » Kullanıcı Sayısı -** __${client.guilds.cache.reduce((a,b) => a + b.memberCount,0).toLocaleString()}__
-**✅ » Link Sayısı -** __${await db.fetch('Proje') || 1}__
-**==================================**`)
-message.channel.send(Istatistik)
-  }
-  if(Split[0] == prefix+'istatistik') {
-  const Istatistik = new Discord.MessageEmbed()
-  .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL())
-  .setTimestamp()
-  .setDescription(`
-**==================================**
-**✅ » Isim -** __${client.user.username}__
-**✅ » Kanal Sayısı -** __${client.channels.size}__
-**✅ » Sunucu Sayısı -** __${client.guilds.cache.size}__
-**✅ » Kullanıcı Sayısı -** __${client.guilds.cache.reduce((a,b) => a + b.memberCount,0).toLocaleString()}__
-**✅ » Link Sayısı -** __${await db.fetch('Proje') || 1}__
-**✅ » Aktiflik Suresi -** __${moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]")}__
-**==================================**`)
-message.channel.send(Istatistik)
-  }
-
-  if(Split[0] == prefix+'s') {
-  const Revoş = new Discord.MessageEmbed()
-  .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL())
-  .setTimestamp()
-  .setDescription(`
-  ==================================
-**» Şuanda Toplam \`${db.get('Proje')}\` URL Uptime Ediliyor ✅**
-
-**» Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tanesi Senin ✅**
-==================================`)
-  message.channel.send(Revoş)
-  }
-  if(Split[0] == prefix+'say') {
-  const Revoş = new Discord.MessageEmbed()
-  .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL())
-  .setTimestamp()
-  .setDescription(`
-  ==================================
-**» Şuanda Toplam \`${db.get('Proje')}\` URL Uptime Ediliyor ✅**
-
-**» Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tanesi Senin ✅**
-==================================`)
-  message.channel.send(Revoş)
   }
 
   if(Split[0] == prefix+'yardım') {
@@ -167,19 +96,19 @@ message.channel.send(Istatistik)
 **<a:BeratBulbulkrmzyldz:786584071248805898> » Prefixim: ${prefix}**
 
 `)
-  .addField('**» Uptime Bot Komutlari**',`
+  .addField('**» Komutlar**',`
 
 <a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}ekle](https://discord.gg/FAchvKXF9r) Link Eklemenize Yarar
 <a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}erişim-kontrol](https://discord.gg/FAchvKXF9r) Erişim Kontrol
 <a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}linkler](https://discord.gg/FAchvKXF9r) Linklerinizi Gösterir
 `)
-  .addField('**» Genel Komutlar**',`
-<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}davet](https://discord.gg/FAchvKXF9r) Botun Davet Linkini Atar
-<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}istatistik](https://discord.gg/FAchvKXF9r) Bot Istatistigini Atar
-<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}say](https://discord.gg/FAchvKXF9r) Total Ve Senin Link Sayini Atar
+  .addField('**Hakkında**',`
+  Bu Bot Botlarınızı 7/24 Yapmaya Yarar
+  VDS Olmadan Bunu Yapabilir
+  __7/24 Ücretsizdir!__
+
+<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}Eklemek İçin](https://discord.com/oauth2/authorize?client_id=782250000901341204&permissions=8&scope=bot)
 `)
-.addField('**» Destek Sunucum**','[Destek Sunucum](https://discord.gg/8JRafVmUqQ)')
-.addField('**» Davet Linkim**','[Beni Davet Et](https://discord.com/api/oauth2/authorize?client_id=782250000901341204&permissions=8&scope=bot)')
   message.channel.send(HugoMugo)
   }
 
