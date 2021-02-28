@@ -8,7 +8,7 @@ const Discord = require("discord.js")
 const fetch = require('node-fetch');
 const app = express();
 const client = new Discord.Client();
-const prefix = '!'
+const prefix = '.'
 
 setInterval(() => {
 const Linkler = db.get('Linkler')
@@ -37,7 +37,7 @@ client.on('message', async message => {
   if(Split[0] == prefix+'ekle') {
   var Link = Split[1]
   fetch(Link).then(() => {
-    const Revenge = new Discord.RichEmbed()
+    const Revenge = new Discord.MessageEmbed()
     .setColor('RED')
     .setDescription(`
     **==================================**
@@ -62,7 +62,7 @@ client.on('message', async message => {
     db.push(`Projesi_${message.author.id}`,Link)
     db.add(`Proje`,1)
   }).catch(Hata => {
-  const UpTime = new Discord.RichEmbed()
+  const UpTime = new Discord.MessageEmbed()
   .setColor('RED')
   .setDescription(`
   **==================================**
@@ -71,7 +71,6 @@ client.on('message', async message => {
   **Lutfen Bir URL Girin**
   ==================================
   `)
-  .setImage('https://i.hizliresim.com/9naFeE.png')
   .setTimestamp()
   .setThumbnail(message.author.avatarURL)
   message.channel.send(UpTime)
@@ -96,24 +95,8 @@ Beni Sunucuna Eklemek Istemen Beni Sevindiriyor Hemen Altta Linkimi Bula Bilirsi
   message.channel.send(Revo)
   }
 
-  if(Split[0] == prefix+'i') {
-  const Istatistik = new Discord.RichEmbed()
-  .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL)
-  .setTimestamp()
-  .setDescription(`
-**==================================**
-**✅ » Isim -** __${client.user.username}__
-**✅ » Kanal Sayısı -** __${client.channels.size}__
-**✅ » Sunucu Sayısı -** __${client.guilds.size}__
-**✅ » Kullanıcı Sayısı -** __${client.guilds.reduce((a,b) => a + b.memberCount,0).toLocaleString()}__
-**✅ » Link Sayısı -** __${await db.fetch('Proje') || 1}__
-**✅ » Aktiflik Suresi -** __${moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]")}__
-**==================================**`)
-message.channel.send(Istatistik)
-  }
   if(Split[0] == prefix+'istatistik') {
-  const Istatistik = new Discord.RichEmbed()
+  const Istatistik = new Discord.MessageEmbed()
   .setColor('#20aaba')
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
@@ -130,26 +113,25 @@ message.channel.send(Istatistik)
   }
 
   if(Split[0] == prefix+'s') {
-  const Revoş = new Discord.RichEmbed()
+  const Revoş = new Discord.MessageEmbed()
   .setColor('#20aaba')
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
   .setDescription(`
-  ==================================
-**» Şuanda Toplam \`${db.get('Proje')}\` URL Uptime Ediliyor ✅**
+ 
+**-> Şuanda Toplam \`${db.get('Proje')}\` Botu Uptime Ediyorum. ✅**
 
-**» Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tanesi Senin ✅**
-==================================`)
+`)
   message.channel.send(Revoş)
   }
   if(Split[0] == prefix+'say') {
-  const Revoş = new Discord.RichEmbed()
+  const Revoş = new Discord.MessageEmbed()
   .setColor('#20aaba')
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
   .setDescription(`
-  ==================================
-**» Şuanda Toplam \`${db.get('Proje')}\` URL Uptime Ediliyor ✅**
+  
+**-> Şuanda Toplam \`${db.get('Proje')}\` URL Uptime Ediliyor ✅**
 
 **» Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tanesi Senin ✅**
 ==================================`)
@@ -157,8 +139,8 @@ message.channel.send(Istatistik)
   }
 
   if(Split[0] == prefix+'yardım') {
-  const HugoMugo = new Discord.MessageEmbed()
-  .setColor('#20aaba')
+  const pxd = new Discord.MessageEmbed()
+  .setColor('RANDOM')
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
   .setAuthor(client.user.username,client.user.avatarURL)
@@ -177,37 +159,32 @@ message.channel.send(Istatistik)
   VDS Olmadan Bunu Yapabilir
   __7/24 Ücretsizdir!__
 ==================================
-> <a:BeratBulbulonline:786584064702414879> » [Destek Server](https://discord.gg/Bsq9XtBWYV)
-> <a:BeratBulbulonline:786584064702414879> » [Eklemek İçin](https://discord.com/oauth2/authorize?client_id=782250000901341204&permissions=8&scope=bot)`)
-.setThumbnail('https://cdn.discordapp.com/avatars/782250000901341204/f59ccc9892d1661328b88ed7be3ebbfb.png?size=1024')
-  message.channel.send(HugoMugo)
+<a:partner:801075649065910293> » [Destek Sunucu](https://discord.gg/gtTTN726aM)
+<a:partner:801075649065910293>  » [Uptime Bot Ekle](https://paradoxphp.com)`)
+
+  message.channel.send(pxd)
   }
 
     if(Split[0] == prefix+'linkler') {
     const Linkleri = db.fetch(`Projesi_${message.author.id}`)
-    if (!db.get('Linkler').map(Revenge => Revenge.owner).includes(message.author.id)) return message.channel.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**Hiç link eklememişsin. Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
-    message.channel.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**Uptime Etmekte Olduğun Linkler Direkt Mesajlarına Gönderildi . Direkt mesajlarını kontrol et.  ${message.author}**`).setThumbnail(message.author.avatarURL))
-    message.author.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**» Normal Linklerin:** \n\n\``+Linkleri.join('\n')+`\``).setThumbnail(message.author.avatarURL))
+    if (!db.get('Linkler').map(Revenge => Revenge.owner).includes(message.author.id)) return message.channel.send(new Discord.MessageEmbed().setColor('#20aaba').setDescription(`**Hiç link eklememişsin. Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
+    message.channel.send(new Discord.MessageEmbed().setColor('#20aaba').setDescription(`**Uptime Etmekte Olduğun Linkler Direkt Mesajlarına Gönderildi . Direkt mesajlarını kontrol et.  ${message.author}**`).setThumbnail(message.author.avatarURL))
+    message.author.send(new Discord.MessageEmbed().setColor('#20aaba').setDescription(`**» Normal Linklerin:** \n\n\``+Linkleri.join('\n')+`\``).setThumbnail(message.author.avatarURL))
     }
 
 
-    if(Split[0] == prefix+'erişim-kontrol') {
-const Megenge = new Discord.RichEmbed()
-.setColor('#20aaba')
-.setThumbnail(message.author.avatarURL)
-.setTimestamp()
-.setTitle('🎈 Erişim Kontrol')
-.setDescription('**» Erişiminiz Aktif**')
-message.channel.send(Megenge)
-}
+   
 })
 
 
 
 
 client.on('ready', () => {
-client.user.setActivity(`${prefix}yardım | W4ldo🌐`, { type: 'WATCHING' })
-//client.user.setStatus('dnd')
+client.user.setActivity(`${prefix}ekle | ${prefix}yardım`, { type: 'LISTENING' })
+client.user.setStatus('online')
+  
+  //client.user.setStatus('online') -> çevrimiçi -> PARADOX DEVELOPMENT
+  //client.user.setStatus('dnd') -> rahatsız etmeyin -> PARADOX DEVELOPMENT
 })
 
 client.on("message", async message => {
@@ -249,4 +226,5 @@ client.on("message", async message => {
 const Log = message => {
 console.log(`${message}`)
 }
+//tokenininizi giriniz.
 client.login('NzgwMTA5ODUwNDkwOTYxOTYw.X7qT6g.BQepB_CnsEXHajeVtXBGkzAARYU')
