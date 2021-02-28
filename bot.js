@@ -165,12 +165,12 @@ message.channel.send(Istatistik)
 
 
 `)
-  .addField('**Bot Komutlari**',`
-<a:partner:801075649065910293> » [${prefix}ekle](https://discord.gg/FAchvKXF9r) Link Eklemenize Yarar
+  .addField('**Uptime Bot Command**',`
+<a:partner:801075649065910293> » .ekle(https://discord.gg/FAchvKXF9r) Link Eklemenize Yarar
 <a:partner:801075649065910293>  » [${prefix}erişim-kontrol](https://discord.gg/FAchvKXF9r) Erişim Kontrol
-<a:partner:801075649065910293> » [${prefix}linkler](https://discord.gg/FAchvKXF9r) Liklerinizi Gösterir
+<a:partner:801075649065910293> » .linkler(https://discord.gg/FAchvKXF9r) Liklerinizi Gösterir
 `)
-  .addField('**Hakkında**',`
+  .addField('**Uptime Bot Support**',`
  » Prefixim: **${prefix}**
 
 > » [Destek Sunucu](https://discord.gg/gtTTN726aM)
@@ -180,15 +180,15 @@ message.channel.send(Istatistik)
 
     if(Split[0] == prefix+'linkler') {
     const Linkleri = db.fetch(`Projesi_${message.author.id}`)
-    if (!db.get('Linkler').map(Revenge => Revenge.owner).includes(message.author.id)) return message.channel.send(new Discord.MessageEmbed().setColor('#20aaba').setDescription(`**Hiç link eklememişsin. Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
-    message.channel.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**Uptime Etmekte Olduğun Linkler Direkt Mesajlarına Gönderildi . Direkt mesajlarını kontrol et.  ${message.author}**`).setThumbnail(message.author.avatarURL))
-    message.author.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**» Normal Linklerin:** \n\n\``+Linkleri.join('\n')+`\``).setThumbnail(message.author.avatarURL))
+    if (!db.get('Linkler').map(Revenge => Revenge.owner).includes(message.author.id)) return message.channel.send(new Discord.MessageEmbed().setColor('RANDOM').setDescription(`**Hiç link eklememişsin. Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
+    message.channel.send(new Discord.MessageEmbed().setColor('RANDOM').setDescription(`**Uptime Etmekte Olduğun Linkler Direkt Mesajlarına Gönderildi . Direkt mesajlarını kontrol et.  ${message.author}**`).setThumbnail(message.author.avatarURL))
+    message.author.send(new Discord.MessageEmbed().setColor('RANDOM').setDescription(`**» Normal Linklerin:** \n\n\``+Linkleri.join('\n')+`\``).setThumbnail(message.author.avatarURL))
     }
 
 
     if(Split[0] == prefix+'erişim-kontrol') {
 const Megenge = new Discord.RichEmbed()
-.setColor('#20aaba')
+.setColor('RANDOM')
 .setThumbnail(message.author.avatarURL)
 .setTimestamp()
 .setTitle('🎈 Erişim Kontrol')
