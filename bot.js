@@ -95,22 +95,6 @@ Beni Sunucuna Eklemek Istemen Beni Sevindiriyor Hemen Altta Linkimi Bula Bilirsi
   message.channel.send(Revo)
   }
 
-  if(Split[0] == prefix+'istatistik') {
-  const Istatistik = new Discord.MessageEmbed()
-  .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL)
-  .setTimestamp()
-  .setDescription(`
-**==================================**
-**✅ » Isim -** __${client.user.username}__
-**✅ » Kanal Sayısı -** __${client.channels.size}__
-**✅ » Sunucu Sayısı -** __${client.guilds.size}__
-**✅ » Kullanıcı Sayısı -** __${client.guilds.reduce((a,b) => a + b.memberCount,0).toLocaleString()}__
-**✅ » Link Sayısı -** __${await db.fetch('Proje') || 1}__
-**✅ » Aktiflik Suresi -** __${moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]")}__
-**==================================**`)
-message.channel.send(Istatistik)
-  }
 
   if(Split[0] == prefix+'s') {
   const Revoş = new Discord.MessageEmbed()
@@ -149,16 +133,13 @@ message.channel.send(Istatistik)
 **<a:evet:786584119316447302> » Prefixim: ${prefix}**
 
 `)
-  .addField('**» Uptime Bot Komutlari**',`
-<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}ekle](https://discord.gg/FAchvKXF9r) Link Eklemenize Yarar
-<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}erişim-kontrol](https://discord.gg/FAchvKXF9r) Erişim Kontrol
-<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}linkler](https://discord.gg/FAchvKXF9r) Liklerinizi Gösterir
+  .addField('**» Uptime Bot Komutları**',`
+<a:partner:801075649065910293> » .ekle - Botunuzu Uptime Eder.
+<a:partner:801075649065910293> » .linkler - Uptime ettiğiniz link sayısını gösterir.
+<a:partner:801075649065910293> » .
 `)
-  .addField('**Hakkında**',`
-  Bu Bot Botlarınızı 7/24 Yapmaya Yarar
-  VDS Olmadan Bunu Yapabilir
-  __7/24 Ücretsizdir!__
-==================================
+  .addField('**Uptime Bot - Hakkında**',`
+
 <a:partner:801075649065910293> » [Destek Sunucu](https://discord.gg/gtTTN726aM)
 <a:partner:801075649065910293>  » [Uptime Bot Ekle](https://paradoxphp.com)`)
 
