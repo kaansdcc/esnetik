@@ -176,4 +176,4 @@ const Log = message => {
 console.log(`${message}`)
 }
 //tokenininizi giriniz.
-client.login('NzgwMTA5ODUwNDkwOTYxOTYw.X7qT6g.BQepB_CnsEXHajeVtXBGkzAARYU')
+client.login('NzgwMTA5ODUwNDkwOTYxOTYw.X7qT6g.31')
