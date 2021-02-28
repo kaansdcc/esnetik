@@ -13,10 +13,9 @@
   },
   "engines": {
     "node": "12.x",
-     "author": "Paradox",
+    "author": "Paradox",
     "license": "ISC",
     "description": "Dijital Eğitmenim v12 Uptime Bot Altyapı"
-  }
-  
-  
+  },
+  "license": "MIT"
 }
