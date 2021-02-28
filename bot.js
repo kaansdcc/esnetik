@@ -8,9 +8,21 @@ const Discord = require("discord.js")
 const fetch = require('node-fetch');
 const app = express();
 const client = new Discord.Client();
-const prefix = '.'
+const prefix = '!'
 
-
+setInterval(() => {
+const Linkler = db.get('Linkler')
+if(!Linkler) return;
+const Aventadoria = Linkler.map(Revenge => Revenge.url)
+Aventadoria.forEach(Link => {
+try {
+fetch(Link)
+} catch(e) {
+console.error(e)
+}
+})
+console.log(`${client.user.username} | ${db.get('Proje') || 1} Proje Hostandı`)
+}, 60000)
 
 client.on('ready', () => {
 console.log(`${client.user.username} Aktif!`)
@@ -27,7 +39,6 @@ client.on('message', async message => {
   fetch(Link).then(() => {
     const Revenge = new Discord.RichEmbed()
     .setColor('RED')
-    .setThumbnail(message.author.avatarURL)
     .setDescription(`
     **==================================**
     **Link Sistemde Zaten Bulunuyor. ❌** 
@@ -41,7 +52,7 @@ client.on('message', async message => {
     .setThumbnail(message.author.avatarURL)
     .setDescription(`
     **==================================**
-    **Glitch Linkiniz Başarıyla Eklendi.**
+    **Yazdığınız URL Başarıyla Eklendi. ✅**
     `)
     .addField(prefix+'linkler','Komutunu Kullanarak Ekledigin Linklere Erisebilirsin')
     .setTimestamp()
@@ -51,34 +62,24 @@ client.on('message', async message => {
     db.push(`Projesi_${message.author.id}`,Link)
     db.add(`Proje`,1)
   }).catch(Hata => {
-  const UpTime = new Discord.MessageEmbed()
-  .setColor('RANDOM')
+  const UpTime = new Discord.RichEmbed()
+  .setColor('RED')
   .setDescription(`
-  **Lütfen Show Linkinizi Doğru Bir Şekilde Giriniz**
+  **==================================**
+  **Hata: ${Hata} ❌**
 
+  **Lutfen Bir URL Girin**
+  ==================================
   `)
+  .setImage('https://i.hizliresim.com/9naFeE.png')
   .setTimestamp()
   .setThumbnail(message.author.avatarURL)
   message.channel.send(UpTime)
   })
   }
-  
-  setInterval(() => {
-const Linkler = db.get('Linkler')
-if(!Linkler) return;
-const Aventadoria = Linkler.map(Revenge => Revenge.url)
-Aventadoria.forEach(Link => {
-try {
-fetch(Link)
-} catch(e) {
-console.error(e)
-}
-})
-console.log(`${client.user.username} | ${db.get('Proje') || 1} Proje Hostandı`)
-}, 60000)
 
   if(Split[0] == prefix+'davet') {
-  const Revo = new Discord.MessageEmbed()
+  const Revo = new Discord.RichEmbed()
   .setColor('#20aaba')
   .setDescription(`
   **==================================
@@ -142,7 +143,7 @@ message.channel.send(Istatistik)
   message.channel.send(Revoş)
   }
   if(Split[0] == prefix+'say') {
-  const Embed = new Discord.RichEmbed()
+  const Revoş = new Discord.RichEmbed()
   .setColor('#20aaba')
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
@@ -152,41 +153,61 @@ message.channel.send(Istatistik)
 
 **» Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tanesi Senin ✅**
 ==================================`)
-  message.channel.send(Embed)
+  message.channel.send(Revoş)
   }
 
   if(Split[0] == prefix+'yardım') {
-  const Message = new Discord.MessageEmbed()
+  const HugoMugo = new Discord.MessageEmbed()
   .setColor('#20aaba')
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
   .setAuthor(client.user.username,client.user.avatarURL)
   .setDescription(`
 
+**<a:evet:786584119316447302> » Prefixim: ${prefix}**
 
 `)
-  .addField('**Uptime Bot Command**',`
-<a:partner:801075649065910293> » .ekle(https://discord.gg/FAchvKXF9r) Link Eklemenize Yarar
-<a:partner:801075649065910293>  » [${prefix}erişim-kontrol](https://discord.gg/FAchvKXF9r) Erişim Kontrol
-<a:partner:801075649065910293> » .linkler(https://discord.gg/FAchvKXF9r) Liklerinizi Gösterir
+  .addField('**» Uptime Bot Komutlari**',`
+<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}ekle](https://discord.gg/FAchvKXF9r) Link Eklemenize Yarar
+<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}erişim-kontrol](https://discord.gg/FAchvKXF9r) Erişim Kontrol
+<a:BeratBulbulkrmzyldz:786584135762051103> » [${prefix}linkler](https://discord.gg/FAchvKXF9r) Liklerinizi Gösterir
 `)
-  .addField('**Uptime Bot Support**',`
- » Prefixim: **${prefix}**
-
-> » [Destek Sunucu](https://discord.gg/gtTTN726aM)
-`)
-  message.channel.send(Message)
+  .addField('**Hakkında**',`
+  Bu Bot Botlarınızı 7/24 Yapmaya Yarar
+  VDS Olmadan Bunu Yapabilir
+  __7/24 Ücretsizdir!__
+==================================
+> <a:BeratBulbulonline:786584064702414879> » [Destek Server](https://discord.gg/Bsq9XtBWYV)
+> <a:BeratBulbulonline:786584064702414879> » [Eklemek İçin](https://discord.com/oauth2/authorize?client_id=782250000901341204&permissions=8&scope=bot)`)
+.setThumbnail('https://cdn.discordapp.com/avatars/782250000901341204/f59ccc9892d1661328b88ed7be3ebbfb.png?size=1024')
+  message.channel.send(HugoMugo)
   }
 
     if(Split[0] == prefix+'linkler') {
     const Linkleri = db.fetch(`Projesi_${message.author.id}`)
-    if (!db.get('Linkler').map(Revenge => Revenge.owner).includes(message.author.id)) return message.channel.send(new Discord.MessageEmbed().setColor('RANDOM').setDescription(`**Hiç link eklememişsin. Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
-    message.channel.send(new Discord.MessageEmbed().setColor('RANDOM').setDescription(`**Uptime Etmekte Olduğun Linkler Direkt Mesajlarına Gönderildi . Direkt mesajlarını kontrol et.  ${message.author}**`).setThumbnail(message.author.avatarURL))
-    message.author.send(new Discord.MessageEmbed().setColor('RANDOM').setDescription(`**» Normal Linklerin:** \n\n\``+Linkleri.join('\n')+`\``).setThumbnail(message.author.avatarURL))
+    if (!db.get('Linkler').map(Revenge => Revenge.owner).includes(message.author.id)) return message.channel.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**Hiç link eklememişsin. Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
+    message.channel.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**Uptime Etmekte Olduğun Linkler Direkt Mesajlarına Gönderildi . Direkt mesajlarını kontrol et.  ${message.author}**`).setThumbnail(message.author.avatarURL))
+    message.author.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**» Normal Linklerin:** \n\n\``+Linkleri.join('\n')+`\``).setThumbnail(message.author.avatarURL))
     }
 
 
-   
+    if(Split[0] == prefix+'erişim-kontrol') {
+const Megenge = new Discord.RichEmbed()
+.setColor('#20aaba')
+.setThumbnail(message.author.avatarURL)
+.setTimestamp()
+.setTitle('🎈 Erişim Kontrol')
+.setDescription('**» Erişiminiz Aktif**')
+message.channel.send(Megenge)
+}
+})
+
+
+
+
+client.on('ready', () => {
+client.user.setActivity(`${prefix}yardım | W4ldo🌐`, { type: 'WATCHING' })
+//client.user.setStatus('dnd')
 })
 
 client.on("message", async message => {
