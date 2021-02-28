@@ -1,9 +1,7 @@
 # PARADOX DEVELOPMENT
 
-## 1. Purpose
+Altyapı Paradox Development'a aittir.
+- [Discord Sunucumuz](https://discord.gg/gtTTN726aM)
+- [Youtube Kanalımız](https://www.youtube.com/channel/UCbWwYBG4UQUmY9LvPOyHb5w)
 
-Altyapı Paradox Developmenta aittir.
-- Discord Sunucumuz]
-
-## 2. Open [Source/Culture/Tech] Citizenship
 

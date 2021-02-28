@@ -8,7 +8,7 @@ const Discord = require("discord.js")
 const fetch = require('node-fetch');
 const app = express();
 const client = new Discord.Client();
-const prefix = '.'
+const prefix = '.' //PREFİXİNİZİ GİRİNİZ.
 
 setInterval(() => {
 const Linkler = db.get('Linkler')
