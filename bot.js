@@ -10,19 +10,7 @@ const app = express();
 const client = new Discord.Client();
 const prefix = '.'
 
-setInterval(() => {
-const Linkler = db.get('Uptimelanmış Linkler')
-if(!Linkler) return;
-const Aventadoria = Linkler.map(Revenge => Revenge.url)
-Aventadoria.forEach(Link => {
-try {
-fetch(Link)
-} catch(e) {
-console.error(e)
-}
-})
-console.log(`${client.user.username} | ${db.get('Proje') || 1} Proje Hostandı`)
-}, 60000)
+
 
 client.on('ready', () => {
 console.log(`${client.user.username} Aktif!`)
@@ -52,7 +40,7 @@ client.on('message', async message => {
     .setThumbnail(message.author.avatarURL)
     .setDescription(`
     **==================================**
-    **Yazdığınız URL Başarıyla Eklendi. ✅**
+    **Glitch Linkiniz Başarıyla Eklendi.**
     `)
     .addField(prefix+'linkler','Komutunu Kullanarak Ekledigin Linklere Erisebilirsin')
     .setTimestamp()
@@ -63,7 +51,7 @@ client.on('message', async message => {
     db.add(`Proje`,1)
   }).catch(Hata => {
   const UpTime = new Discord.RichEmbed()
-  .setColor('RED')
+  .setColor('RANDOM')
   .setDescription(`
   **==================================**
   **Hata: ${Hata} ❌**
@@ -76,6 +64,20 @@ client.on('message', async message => {
   message.channel.send(UpTime)
   })
   }
+  
+  setInterval(() => {
+const Linkler = db.get('Linkler')
+if(!Linkler) return;
+const Aventadoria = Linkler.map(Revenge => Revenge.url)
+Aventadoria.forEach(Link => {
+try {
+fetch(Link)
+} catch(e) {
+console.error(e)
+}
+})
+console.log(`${client.user.username} | ${db.get('Proje') || 1} Proje Hostandı`)
+}, 60000)
 
   if(Split[0] == prefix+'davet') {
   const Revo = new Discord.RichEmbed()
@@ -201,14 +203,6 @@ message.channel.send(Megenge)
 }
 })
 
-
-
-
-client.on('ready', () => {
-client.user.setActivity(`${prefix}yardım | W4ldo🌐`, { type: 'WATCHING' })
-//client.user.setStatus('dnd')
-})
-
 client.on("message", async message => {
 
   if(!message.content.startsWith("eval")) return;
@@ -248,4 +242,4 @@ client.on("message", async message => {
 const Log = message => {
 console.log(`${message}`)
 }
-client.login('token')
+client.login('NzgwMTA5ODUwNDkwOTYxOTYw.X7qT6g.BQepB_CnsEXHajeVtXBGkzAARYU')

@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node index.js"
+    "start": "node bot.js"
   },
   "dependencies": {
     "discord.js": "^12.5.1",
@@ -12,6 +12,11 @@
     "quick.db": "^7.1.3"
   },
   "engines": {
-    "node": "12.x"
+    "node": "12.x",
+     "author": "Paradox",
+    "license": "ISC",
+    "description": "Dijital Eğitmenim v12 Uptime Bot Altyapı"
   }
+  
+  
 }
