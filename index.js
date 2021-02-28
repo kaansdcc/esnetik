@@ -8,10 +8,10 @@ const Discord = require("discord.js")
 const fetch = require('node-fetch');
 const app = express();
 const client = new Discord.Client();
-const prefix = '!'
+const prefix = '.'
 
 setInterval(() => {
-const Linkler = db.get('Linkler')
+const Linkler = db.get('Uptimelanmış Linkler')
 if(!Linkler) return;
 const Aventadoria = Linkler.map(Revenge => Revenge.url)
 Aventadoria.forEach(Link => {
@@ -71,7 +71,6 @@ client.on('message', async message => {
   **Lutfen Bir URL Girin**
   ==================================
   `)
-  .setImage('https://i.hizliresim.com/9naFeE.png')
   .setTimestamp()
   .setThumbnail(message.author.avatarURL)
   message.channel.send(UpTime)
