@@ -186,15 +186,7 @@ message.channel.send(Istatistik)
     }
 
 
-    if(Split[0] == prefix+'erişim-kontrol') {
-const Megenge = new Discord.RichEmbed()
-.setColor('RANDOM')
-.setThumbnail(message.author.avatarURL)
-.setTimestamp()
-.setTitle('🎈 Erişim Kontrol')
-.setDescription('**» Erişiminiz Aktif**')
-message.channel.send(Megenge)
-}
+   
 })
 
 client.on("message", async message => {
