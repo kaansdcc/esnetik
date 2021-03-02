@@ -16,7 +16,7 @@ client.on("ready", async () => {
     client.appInfo = await client.fetchApplication();
   }, 600);
 
-client.user.setActivity(`!yardım | 10 Bot Uptime `, { type: "PLAYING" });
+client.user.setActivity(`!yardım | 11 Bot Uptime `, { type: "PLAYING" });
 
   console.log("`Keevz Bot!");
 });
@@ -113,12 +113,12 @@ client.on('message', async message => {
 
 `)
   .addField('**» Uptime Bot Komutları**',`
-» !ekle - Botunuzu Uptime Eder.
-» !linkler - Uptime ettiğiniz link sayısını gösterir.
-» !say - Tüm Uptime edilmiş link sayısını gösterir.
+» **!ekle** - Botunuzu Uptime Eder.
+» **!linkler** - Uptime ettiğiniz link sayısını gösterir.
+» **!say** - Tüm Uptime edilmiş link sayısını gösterir.
 `)
   .addField('**Uptime Bot - Hakkında**',`
-» Prefixim: **${prefix}**
+» **Prefixim:** **${prefix}**
 » [Destek Sunucu](https://discord.gg/vnUCR2s6nJ)
 » [Uptime Bot Ekle](https://discord.com/api/oauth2/authorize?client_id=815934810325385217&permissions=8&scope=bot)
 » Yapımcım: <@718116721625661542>
