@@ -8,7 +8,7 @@ const Discord = require("discord.js")
 const fetch = require('node-fetch');
 const app = express();
 const client = new Discord.Client();
-const prefix = '.' //PREFİXİNİZİ GİRİNİZ.
+const prefix = '!' //PREFİXİNİZİ GİRİNİZ.
 
 setInterval(() => {
 const Linkler = db.get('Linkler')
@@ -102,9 +102,8 @@ client.on('message', async message => {
 
 `)
   .addField('**» Uptime Bot Komutları**',`
-<a:partner:801075649065910293> » .ekle - Botunuzu Uptime Eder.
-<a:partner:801075649065910293> » .linkler - Uptime ettiğiniz link sayısını gösterir.
-<a:partner:801075649065910293> » .say - Tüm Uptime edilmiş link sayısını gösterir.
+<a:partner:801075649065910293>» .linkler - Uptime ettiğiniz link sayısını gösterir.
+ » .say - Tüm Uptime edilmiş link sayısını gösterir.
 `)
   .addField('**Uptime Bot - Hakkında**',`
 <a:partner:801075649065910293> » Prefixim: **${prefix}**
