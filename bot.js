@@ -113,15 +113,15 @@ client.on('message', async message => {
 
 `)
   .addField('**» Uptime Bot Komutları**',`
-» **!ekle (Glitch Show Link)** - Botunuzu Uptime Eder.
-» **!linkler** - Uptime ettiğiniz linkleri gösterir.
-» **!say** - Tüm Uptime edilmiş bot sayısını gösterir.
+» **!ekle (Glitch Show Link)** = Botunuzu Uptime Eder.
+» **!linkler** = Uptime ettiğiniz linkleri gösterir.
+» **!say** = Tüm Uptime edilmiş bot sayısını gösterir.
 `)
   .addField('**Uptime Bot - Hakkında**',`
-» **Prefixim:** **${prefix}**
+» **Prefixim** = **${prefix}**
 » [Destek Sunucu](https://discord.gg/vnUCR2s6nJ)
 » [Uptime Bot Ekle](https://discord.com/api/oauth2/authorize?client_id=815934810325385217&permissions=8&scope=bot)
-» Yapımcım: <@718116721625661542>
+» Yapımcım = <@718116721625661542>
 **NOT: Bota Dmden yazın!**`)
 
   message.channel.send(pxd)
