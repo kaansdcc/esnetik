@@ -16,7 +16,7 @@ client.on("ready", async () => {
     client.appInfo = await client.fetchApplication();
   }, 600);
 
-client.user.setActivity(`!yardım | 11 Bot Uptime `, { type: "PLAYING" });
+client.user.setActivity(`!yardım | 12 Bot Uptime `, { type: "PLAYING" });
 
   console.log("`Keevz Bot!");
 });
@@ -63,9 +63,9 @@ client.on('message', async message => {
     .setThumbnail(message.author.avatarURL)
     .setDescription(`
     
-    **Yazdığınız URL Başarıyla Eklendi. ✅**
+    **✅ Yazdığınız URL Başarıyla Sistemimize Eklendi. ✅**
     `)
-    .addField(prefix+'linkler','Komutunu Kullanarak Ekledigin Linklere Erisebilirsin')//PARADOX-DEVELOPMENT
+    .addField(prefix+'linkler','Komutunu Kullanarak Ekledigin Linkleri Görebilirsin!')//PARADOX-DEVELOPMENT
     .setTimestamp()//PARADOX-DEVELOPMENT
     message.channel.send(success)
     db.push('Linkler', { url: Link, owner: message.author.id, owner2: message.author.tag})//PARADOX-DEVELOPMENT
@@ -77,7 +77,7 @@ client.on('message', async message => {
   .setColor('RED')
   .setDescription(`
 
-  **Lütfen Bir URL Girin**
+  **⛔ Lütfen Bir URL Girin! ⛔**
 
   `)
   .setThumbnail(message.author.avatarURL)//PARADOX-DEVELOPMENT
@@ -95,7 +95,7 @@ client.on('message', async message => {
   .setThumbnail(message.author.avatarURL)//PARADOX-DEVELOPMENT
   .setDescription(`
   
-**-> Şuanda Toplam \`${db.get('Proje')}\` URL Uptime Ediliyor ✅**
+**-> Keevz Uptime Bot Şuanda Toplam \`${db.get('Proje')}\` URL Uptime Ediliyor ✅**
 
 **» Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tanesi Senin ✅**
 `)
@@ -113,9 +113,9 @@ client.on('message', async message => {
 
 `)
   .addField('**» Uptime Bot Komutları**',`
-» **!ekle** - Botunuzu Uptime Eder.
-» **!linkler** - Uptime ettiğiniz link sayısını gösterir.
-» **!say** - Tüm Uptime edilmiş link sayısını gösterir.
+» **!ekle (Glitch Show Link)** - Botunuzu Uptime Eder.
+» **!linkler** - Uptime ettiğiniz linkleri gösterir.
+» **!say** - Tüm Uptime edilmiş bot sayısını gösterir.
 `)
   .addField('**Uptime Bot - Hakkında**',`
 » **Prefixim:** **${prefix}**
