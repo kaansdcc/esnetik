@@ -2,6 +2,7 @@ dependencies:
   discord.js: 12.5.1
   express: 4.17.1
   hastebin-gen: 2.0.5
+  http: 0.0.0
   moment: 2.29.1
   moment-duration-format: 2.3.2
   node-fetch: 2.6.1
@@ -412,6 +413,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-ZTTX0MWrsQ2ZAhA1cejAwDLycFsd7I7nVtnkT3Ol0aqodaKW+0CTZDQ1uBv5whptCnc8e8HeRRJxRs0kmm/Qfw==
+  /http/0.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-huYybSnF0Dnen6xYSkVon5KfT3I=
   /iconv-lite/0.4.24:
     dependencies:
       safer-buffer: 2.1.2
@@ -1004,6 +1009,7 @@ specifiers:
   discord.js: ^12.5.1
   express: ^4.17.1
   hastebin-gen: ^2.0.5
+  http: ^0.0.0
   moment: ^2.29.1
   moment-duration-format: ^2.3.2
   node-fetch: ^2.6.1

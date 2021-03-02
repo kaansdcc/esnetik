@@ -108,8 +108,9 @@ client.on('message', async message => {
 `)
   .addField('**Uptime Bot - Hakkında**',`
 » Prefixim: **${prefix}**
-» [Destek Sunucu]()
-» [Uptime Bot Ekle](https://paradoxphp.com)`)
+» [Destek Sunucu](https://discord.gg/vnUCR2s6nJ)
+» [Uptime Bot Ekle](https://discord.com/api/oauth2/authorize?client_id=815934810325385217&permissions=8&scope=bot)
+NOT: `)
 
   message.channel.send(pxd)
   }
