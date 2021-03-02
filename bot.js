@@ -95,9 +95,9 @@ client.on('message', async message => {
   .setThumbnail(message.author.avatarURL)//PARADOX-DEVELOPMENT
   .setDescription(`
   
-**-> Keevz Uptime Bot Şuanda Toplam \`${db.get('Proje')}\` URL Uptime Ediliyor ✅**
+**-> Keevz Uptime Bot Şuanda Toplam \`${db.get('Proje')}\` URL'yi Sorunsuz Bir Şekilde Uptime Ediyor. ✅**
 
-**» Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tanesi Senin ✅**
+**» Keevz Uptime Bot Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tane URl'ni Uptime ediyor!  **
 `)
   message.channel.send(say)
   }
