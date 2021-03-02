@@ -10,8 +10,16 @@ const app = express();
 const client = new Discord.Client();
 const prefix = '!' //PREFİXİNİZİ GİRİNİZ.
 
+client.on("ready", async () => {
+  client.appInfo = await client.fetchApplication();
+  setInterval(async () => {
+    client.appInfo = await client.fetchApplication();
+  }, 600);
 
+client.user.setActivity(`!yardım | 10 Bot Uptime `, { type: "PLAYING" });
 
+  console.log("`Keevz Bot!");
+});
 
 setInterval(() => {
 const Linkler = db.get('Linkler')
