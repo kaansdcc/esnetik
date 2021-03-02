@@ -102,13 +102,14 @@ client.on('message', async message => {
 
 `)
   .addField('**» Uptime Bot Komutları**',`
-<a:partner:801075649065910293>» .linkler - Uptime ettiğiniz link sayısını gösterir.
- » .say - Tüm Uptime edilmiş link sayısını gösterir.
+» !ekle - Botunuzu Uptime Eder.
+» !linkler - Uptime ettiğiniz link sayısını gösterir.
+» !say - Tüm Uptime edilmiş link sayısını gösterir.
 `)
   .addField('**Uptime Bot - Hakkında**',`
-<a:partner:801075649065910293> » Prefixim: **${prefix}**
-<a:partner:801075649065910293> » [Destek Sunucu](https://discord.gg/gtTTN726aM)
-<a:partner:801075649065910293>  » [Uptime Bot Ekle](https://paradoxphp.com)`)
+» Prefixim: **${prefix}**
+» [Destek Sunucu]()
+» [Uptime Bot Ekle](https://paradoxphp.com)`)
 
   message.channel.send(pxd)
   }
@@ -175,4 +176,4 @@ const Log = message => {
 console.log(`${message}`)
 }
 //tokenininizi giriniz.
-client.login('NzgwMTA5ODUwNDkwOTYxOTYw.X7qT6g.31')
+client.login(process.env.token);
