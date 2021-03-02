@@ -12,16 +12,6 @@ const prefix = '!' //PREFİXİNİZİ GİRİNİZ.
 
 
 
-client.on("ready", async () => {
-  client.appInfo = await client.fetchApplication();
-  setInterval(async () => {
-    client.appInfo = await client.fetchApplication();
-  }, 600);
-
-client.user.setActivity(`!yardım | 5 Bot uptime`, { type: "PLAYING" });
-
-  console.log("`Keevz Bot!");
-});
 
 setInterval(() => {
 const Linkler = db.get('Linkler')
