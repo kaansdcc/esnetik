@@ -97,7 +97,7 @@ client.on('message', async message => {
   
 **-> Keevz Uptime Bot Şuanda Toplam \`${db.get('Proje')}\` URL'yi Sorunsuz Bir Şekilde Uptime Ediyor. ✅**
 
-**» Keevz Uptime Bot Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tane URl'ni Uptime ediyor!  **
+**» ✅ Keevz Uptime Bot Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tane Senin URl'ni Uptime ediyor!📣 **
 `)
   message.channel.send(say)
   }
