@@ -190,3 +190,8 @@ console.log(`${message}`)
 }
 //tokenininizi giriniz.
 client.login(process.env.token);
+
+
+client.on("ready", () => {
+  client.channels.cache.get("816298059238735882").join();
+})
