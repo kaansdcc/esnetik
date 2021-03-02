@@ -3,6 +3,7 @@ dependencies:
   express: 4.17.1
   hastebin-gen: 2.0.5
   http: 0.0.0
+  https: 1.0.0
   moment: 2.29.1
   moment-duration-format: 2.3.2
   node-fetch: 2.6.1
@@ -417,6 +418,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-huYybSnF0Dnen6xYSkVon5KfT3I=
+  /https/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-PDfHrhqO65ZpBKKtHpdaGUt+06Q=
   /iconv-lite/0.4.24:
     dependencies:
       safer-buffer: 2.1.2
@@ -1010,6 +1015,7 @@ specifiers:
   express: ^4.17.1
   hastebin-gen: ^2.0.5
   http: ^0.0.0
+  https: ^1.0.0
   moment: ^2.29.1
   moment-duration-format: ^2.3.2
   node-fetch: ^2.6.1
