@@ -16,7 +16,7 @@ client.on("ready", async () => {
     client.appInfo = await client.fetchApplication();
   }, 600);
 
-client.user.setActivity(`!yardım | 18 Bot Uptime `, { type: "PLAYING" });
+client.user.setActivity(`!yardım | 20 Botu Uptime Tutuyorum! `, { type: "PLAYING" });
 
   console.log("`Keevz Bot!");
 });
