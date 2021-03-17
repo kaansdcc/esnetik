@@ -193,7 +193,7 @@ client.login(process.env.token);
 
 
 client.on("ready", () => {
-  client.channels.cache.get("816298059238735882").join();
+  client.channels.cache.get("821726074324516914").join();
 })
 
 
