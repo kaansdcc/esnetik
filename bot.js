@@ -8,7 +8,7 @@ const Discord = require("discord.js")
 const fetch = require('node-fetch');
 const app = express();
 const client = new Discord.Client();
-const prefix = '!' //PREFİXİNİZİ GİRİNİZ.
+const prefix = 's!' //PREFİXİNİZİ GİRİNİZ.
 
 client.on("ready", async () => {
   client.appInfo = await client.fetchApplication();
@@ -16,7 +16,7 @@ client.on("ready", async () => {
     client.appInfo = await client.fetchApplication();
   }, 600);
 
-client.user.setActivity(`!yardım | 55 Botu Uptime Tutuyorum! `, { type: "PLAYING" });
+client.user.setActivity(` s!uptime `, { type: "PLAYING" });
 
   console.log("`Keevz Bot!");
 });
@@ -95,14 +95,14 @@ client.on('message', async message => {
   .setThumbnail(message.author.avatarURL)//PARADOX-DEVELOPMENT
   .setDescription(`
   
-**-> Keevz Uptime Bot Şuanda Toplam \`${db.get('Proje')}\` URL'yi Sorunsuz Bir Şekilde Uptime Ediyor. ✅**
+**» Savage Uptime Bot Şuanda Toplam \`${db.get('Proje')}\` URL'yi Sorunsuz Bir Şekilde Uptime Ediyor. ✅**
 
-**» ✅ Keevz Uptime Bot Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tane Senin URl'ni Uptime ediyor!📣 **
+**» Savage Uptime Bot Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tane Senin URl'ni Uptime ediyor!📣 **
 `)
   message.channel.send(say)
   }
 
-  if(Split[0] == prefix+'yardım') {//PARADOX-DEVELOPMENT
+  if(Split[0] == prefix+'uptime') {//PARADOX-DEVELOPMENT
   const pxd = new Discord.MessageEmbed()
   .setColor('RANDOM')//PARADOX-DEVELOPMENT
   .setThumbnail(message.author.avatarURL)
@@ -112,16 +112,16 @@ client.on('message', async message => {
 
 
 `)
-  .addField('**» Uptime Bot Komutları**',`
-» **!ekle (Glitch Show Link)** = Botunuzu Uptime Eder.
-» **!linkler** = Uptime ettiğiniz linkleri gösterir.
-» **!say** = Tüm Uptime edilmiş bot sayısını gösterir.
+  .addField('**Savage Uptime Bot - Komutları**',`
+» **s!ekle (Glitch Show Link)** = Botunuzu Uptime Eder.
+» **s!linkler** = Uptime ettiğiniz linkleri gösterir.
+» **s!say** = Tüm Uptime edilmiş bot sayısını gösterir.
 `)
-  .addField('**Uptime Bot - Hakkında**',`
+  .addField('**Savage Uptime Bot - Hakkında**',`
 » **Prefixim** = **${prefix}**
-» [Destek Sunucu](https://discord.gg/vnUCR2s6nJ)
-» [Uptime Bot Ekle](https://discord.com/api/oauth2/authorize?client_id=815934810325385217&permissions=8&scope=bot)
-» Yapımcım = <@718116721625661542>
+» [Destek Sunucu](https://discord.gg/bAkfV5Ywys)
+» [Uptime Bot Ekle](https://discord.com/api/oauth2/authorize?client_id=827448618775740466&permissions=8&scope=bot)
+» Yapımcım = <@352157826212167681>
 **NOT: Bota Dmden yazın!**`)
 
   message.channel.send(pxd)
@@ -152,7 +152,7 @@ client.user.setStatus('online')
 client.on("message", async message => {
 
   if(!message.content.startsWith("eval")) return;
-  if(!["713831710885806125","713831710885806125"].includes(message.author.id)) return;
+  if(!["352157826212167681"].includes(message.author.id)) return;
   var args = message.content.split("eval")[1]
   if(!args) return message.channel.send(":x: ..")
   
