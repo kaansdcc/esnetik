@@ -8,7 +8,7 @@ const Discord = require("discord.js")
 const fetch = require('node-fetch');
 const app = express();
 const client = new Discord.Client();
-const prefix = 's!' //PREFİXİNİZİ GİRİNİZ.
+const prefix = '+' //PREFİXİNİZİ GİRİNİZ.
 
 client.on("ready", async () => {
   client.appInfo = await client.fetchApplication();
@@ -18,7 +18,7 @@ client.on("ready", async () => {
 
 client.user.setActivity(` s!uptime `, { type: "PLAYING" });
 
-  console.log("`Keevz Bot!");
+  console.log("`");
 });
 
 setInterval(() => {
@@ -49,39 +49,39 @@ client.on('message', async message => {
   var Link = Split[1]
   fetch(Link).then(() => {
     const Revenge = new Discord.MessageEmbed()
-    .setColor('RED')
+    .setColor('PURPLE')
     .setDescription(`
     
-    **Link Sistemde Zaten Bulunuyor. ❌** 
+    **Link Sistemde Zaten Bulunuyor. <a:elmas:829687812714266634>** 
 
     `)
     .setTimestamp()
     .setThumbnail(message.author.avatarURL)
     if(db.get('Linkler').map(Revenge => Revenge.url).includes(Link)) return message.channel.send(Revenge)
     const success = new Discord.MessageEmbed()
-    .setColor('GREEN')
+    .setColor('PURPLE')
     .setThumbnail(message.author.avatarURL)
     .setDescription(`
     
-    **✅ Yazdığınız URL Başarıyla Sistemimize Eklendi. ✅**
+    ** Yazdığınız Site Başarıyla Uptime Sistemimize Eklendi. <a:moremo:829312643235840020>**
     `)
-    .addField(prefix+'linkler','Komutunu Kullanarak Ekledigin Linkleri Görebilirsin!')//PARADOX-DEVELOPMENT
-    .setTimestamp()//PARADOX-DEVELOPMENT
+    .addField(prefix+'linkler','Komutunu Kullanarak Ekledigin Linkleri Görebilirsin!')//voxic code uptime
+    .setTimestamp()
     message.channel.send(success)
-    db.push('Linkler', { url: Link, owner: message.author.id, owner2: message.author.tag})//PARADOX-DEVELOPMENT
-    db.add(`Sahiplik_${message.author.id}`,1)//PARADOX-DEVELOPMENT
-    db.push(`Projesi_${message.author.id}`,Link)//PARADOX-DEVELOPMENT
+    db.push('Linkler', { url: Link, owner: message.author.id, owner2: message.author.tag})
+    db.add(`Sahiplik_${message.author.id}`,1)
+    db.push(`Projesi_${message.author.id}`,Link)
     db.add(`Proje`,1)
   }).catch(Hata => {
   const dijitaluptime = new Discord.MessageEmbed()
-  .setColor('RED')
+  .setColor('PURPLE')
   .setDescription(`
 
-  **⛔ Lütfen Bir URL Girin! ⛔**
+  ** Lütfen Bir Uptime Edeceğim URL'yi Girin! <a:moremo:829312643235840020>**
 
   `)
-  .setThumbnail(message.author.avatarURL)//PARADOX-DEVELOPMENT
-  message.channel.send(dijitaluptime)//PARADOX-DEVELOPMENT
+  .setThumbnail(message.author.avatarURL)
+  message.channel.send(dijitaluptime)
   })
   }
 
@@ -90,52 +90,52 @@ client.on('message', async message => {
 
 
   if(Split[0] == prefix+'say') {
-  const say = new Discord.MessageEmbed()//PARADOX-DEVELOPMENT
-  .setColor('#20aaba')
-  .setThumbnail(message.author.avatarURL)//PARADOX-DEVELOPMENT
+  const say = new Discord.MessageEmbed()
+  .setColor('PURPLE')
+  .setThumbnail(message.author.avatarURL)
   .setDescription(`
   
-**» Savage Uptime Bot Şuanda Toplam \`${db.get('Proje')}\` URL'yi Sorunsuz Bir Şekilde Uptime Ediyor. ✅**
+** Voxic Code Uptime  Şuanda  \`${db.get('Proje')}\` URL'yi Sorunsuz Bir Şekilde 7/24 Aktif Tutuyor. <a:moremo:829312643235840020>**
 
-**» Savage Uptime Bot Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tane Senin URl'ni Uptime ediyor!📣 **
+**  Voxic Code Uptime  Bu Linklerden Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tane Senin URl'ni Uptime ediyor!📣 **
 `)
   message.channel.send(say)
   }
 
-  if(Split[0] == prefix+'uptime') {//PARADOX-DEVELOPMENT
+  if(Split[0] == prefix+'uptime') {
   const pxd = new Discord.MessageEmbed()
-  .setColor('RANDOM')//PARADOX-DEVELOPMENT
+  .setColor('PURPLE')
   .setThumbnail(message.author.avatarURL)
-  .setTimestamp()//PARADOX-DEVELOPMENT
+  .setTimestamp()
   .setAuthor(client.user.username,client.user.avatarURL)
   .setDescription(`
 
 
 `)
-  .addField('**Savage Uptime Bot - Komutları**',`
-» **s!ekle (Glitch Show Link)** = Botunuzu Uptime Eder.
-» **s!linkler** = Uptime ettiğiniz linkleri gösterir.
-» **s!say** = Tüm Uptime edilmiş bot sayısını gösterir.
+  .addField('** Voxic Code Uptime  - Komutları**',`
+» **+ekle (Glitch Show Link)** = Botunuzu 7/24 Aktif Tutar.
+» **+linkler** = 7/24 Tuttuğum linkleri gösterir.
+» **+say** = Tüm Uptime edilmiş bot sayısını gösterir.
 `)
-  .addField('**Savage Uptime Bot - Hakkında**',`
+  .addField('**Voxic Code Uptime Bot - Hakkında**',`
 » **Prefixim** = **${prefix}**
-» [Destek Sunucu](https://discord.gg/bAkfV5Ywys)
-» [Uptime Bot Ekle](https://discord.com/api/oauth2/authorize?client_id=827448618775740466&permissions=8&scope=bot)
-» Yapımcım = <@352157826212167681>
-**NOT: Bota Dmden yazın!**`)
+» [Destek Sunucu](-https://discord.gg/n7dD8pu9)
+» [Voxic Code Uptime Botu Ekle](https://discord.com/oauth2/authorize?client_id=724983508212121741&scope=bot&permissions=805969982)
+» Yapımcım = <@509417115439071233>
+**NOT: Botu İster Sunucusunda İster Özelden Kullanabilirsiniz Tercih Sizin**`)
 
   message.channel.send(pxd)
   }
-//PARADOX-DEVELOPMENT
+
     if(Split[0] == prefix+'linkler') {
     const Linkleri = db.fetch(`Projesi_${message.author.id}`)
-    if (!db.get('Linkler').map(Revenge => Revenge.owner).includes(message.author.id)) return message.channel.send(new Discord.MessageEmbed().setColor('#20aaba').setDescription(`**Hiç link eklememişsin. Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
-    message.channel.send(new Discord.MessageEmbed().setColor('#20aaba').setDescription(`**Uptime ettiğiniz botlarınızın linklerini güvenlik amaçlı DM yoluyla gönderdik ${message.author}**`).setThumbnail(message.author.avatarURL))
-    message.author.send(new Discord.MessageEmbed().setColor('#20aaba').setDescription(`**» Normal Linklerin:** \n\n\``+Linkleri.join('\n')+`\``).setThumbnail(message.author.avatarURL))
+    if (!db.get('Linkler').map(Revenge => Revenge.owner).includes(message.author.id)) return message.channel.send(new Discord.MessageEmbed().setColor('PURPLE').setDescription(`**Hiç link eklememişsin. Üzdün Beni Dostum Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
+    message.channel.send(new Discord.MessageEmbed().setColor('PURPLE').setDescription(`**7/24 Aktfi Tuttuğum botlarınızın linklerini daha güvenli olduğunda DM üzerinden gönderdim ${message.author}**`).setThumbnail(message.author.avatarURL))
+    message.author.send(new Discord.MessageEmbed().setColor('PURPLE').setDescription(`** Normal Linklerin:** <a:elmas:829687812714266634>\n\n\``+Linkleri.join('\n')+`\``).setThumbnail(message.author.avatarURL))
     }
 
 
-   //PARADOX-DEVELOPMENT
+   //
 })
 //PARADOX-DEVELOPMENT
 
