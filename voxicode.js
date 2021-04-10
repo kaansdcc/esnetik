@@ -33,7 +33,7 @@ console.error(e)
 }
 })
 console.log(`${client.user.username} | ${db.get('Proje') || 1} Proje Hostandı`)
-}, 60000)
+}, 10000)
 
 client.on('ready', () => {
 console.log(`${client.user.username} Aktif!`)
