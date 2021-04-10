@@ -113,7 +113,7 @@ client.on('message', async message => {
 
 `)
   .addField('** Voxic Code Uptime  - Komutları**',`
-» <a:elmas:829687812714266634> **+ekle (Glitch Show Link)** = Botunuzu 7/24 Aktif Tutar.
+» <a:elmas:829687812714266634> **+ekle (Glitch Show Linki)** = Botunuzu 7/24 Aktif Tutar.
 » <a:elmas:829687812714266634>**+linkler** = 7/24 Tuttuğum linkleri gösterir.
 » <a:elmas:829687812714266634> **+say** = Tüm Uptime edilmiş bot sayısını gösterir.
 `)
