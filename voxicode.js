@@ -16,7 +16,7 @@ client.on("ready", async () => {
     client.appInfo = await client.fetchApplication();
   }, 600);
 
-client.user.setActivity(` s!uptime `, { type: "PLAYING" });
+client.user.setActivity(`Voxic Code Uptime • +yardım `, { type: "PLAYING" });
 
   console.log("`");
 });
@@ -102,7 +102,7 @@ client.on('message', async message => {
   message.channel.send(say)
   }
 
-  if(Split[0] == prefix+'uptime') {
+  if(Split[0] == prefix+'yardım') {
   const pxd = new Discord.MessageEmbed()
   .setColor('PURPLE')
   .setThumbnail(message.author.avatarURL)
@@ -113,16 +113,16 @@ client.on('message', async message => {
 
 `)
   .addField('** Voxic Code Uptime  - Komutları**',`
-» **+ekle (Glitch Show Link)** = Botunuzu 7/24 Aktif Tutar.
-» **+linkler** = 7/24 Tuttuğum linkleri gösterir.
-» **+say** = Tüm Uptime edilmiş bot sayısını gösterir.
+» <a:elmas:829687812714266634> **+ekle (Glitch Show Link)** = Botunuzu 7/24 Aktif Tutar.
+» <a:elmas:829687812714266634>**+linkler** = 7/24 Tuttuğum linkleri gösterir.
+» <a:elmas:829687812714266634> **+say** = Tüm Uptime edilmiş bot sayısını gösterir.
 `)
   .addField('**Voxic Code Uptime Bot - Hakkında**',`
 » **Prefixim** = **${prefix}**
-» [Destek Sunucu](-https://discord.gg/n7dD8pu9)
-» [Voxic Code Uptime Botu Ekle](https://discord.com/oauth2/authorize?client_id=724983508212121741&scope=bot&permissions=805969982)
-» Yapımcım = <@509417115439071233>
-**NOT: Botu İster Sunucusunda İster Özelden Kullanabilirsiniz Tercih Sizin**`)
+» <a:sarkrok:829682142748475413> [Destek Sunucu](-https://discord.gg/n7dD8pu9)
+» <a:sarkrok:829682142748475413> [Voxic Code Uptime Botu Ekle](https://discord.com/oauth2/authorize?client_id=724983508212121741&scope=bot&permissions=805969982)
+» <a:sarkrok:829682142748475413> Yapımcım = <@509417115439071233>
+» <a:sarkrok:829682142748475413>**NOT: Botu İster Sunucusunda İster Özelden Kullanabilirsiniz Tercih Sizin**`)
 
   message.channel.send(pxd)
   }
@@ -135,15 +135,15 @@ client.on('message', async message => {
     }
 
 
-   //
+   //voxic code uptime
 })
-//PARADOX-DEVELOPMENT
 
 
-//PARADOX-DEVELOPMENT
+
+
 client.on('ready', () => {
-client.user.setActivity(`${prefix}ekle | ${prefix}yardım`, { type: 'LISTENING' })
-client.user.setStatus('online')
+client.user.setActivity(`${prefix}ekle | ${prefix}yardım`, { type: 'PLAYING' })
+client.user.setStatus('idle')
   
   //client.user.setStatus('online') -> çevrimiçi -> PARADOX DEVELOPMENT
   //client.user.setStatus('dnd') -> rahatsız etmeyin -> PARADOX DEVELOPMENT
@@ -152,7 +152,7 @@ client.user.setStatus('online')
 client.on("message", async message => {
 
   if(!message.content.startsWith("eval")) return;
-  if(!["352157826212167681"].includes(message.author.id)) return;
+  if(!["509417115439071233"].includes(message.author.id)) return;
   var args = message.content.split("eval")[1]
   if(!args) return message.channel.send(":x: ..")
   
@@ -193,7 +193,9 @@ client.login(process.env.token);
 
 
 client.on("ready", () => {
-  client.channels.cache.get("821726074324516914").join();
+  client.channels.cache.get("829771886052507688").join();
 })
 
-
+//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.
+//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.
+//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.
