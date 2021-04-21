@@ -136,8 +136,8 @@ client.on('message', async message => {
 
 
 client.on('ready', () => {
-client.user.setActivity(`${prefix}ekle | ${prefix}yardım`, { type: 'PLAYING' })
-client.user.setStatus('idle')
+client.user.setActivity(`+ekle (Kısa Link)`, { type: 'PLAYING' })
+client.user.setStatus('dnd')
   
   //client.user.setStatus('online') -> çevrimiçi -> PARADOX DEVELOPMENT
   //client.user.setStatus('dnd') -> rahatsız etmeyin -> PARADOX DEVELOPMENT
