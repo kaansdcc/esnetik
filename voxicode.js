@@ -187,7 +187,7 @@ client.login(process.env.token);
 
 
 client.on("ready", () => {
-  client.channels.cache.get("829771886052507688").join();
+  client.channels.cache.get("834842842564132894").join();
 })
 
 //Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.//Voxic tarafından kodlanmıştır.
