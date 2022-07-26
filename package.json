@@ -1,23 +1,28 @@
 {
+  "name": "levelbot",
+  "version": "1.0.0",
+  "description": "A simple Node app built on fastify, instantly up and running.",
+  "main": "app.js",
   "scripts": {
-    "start": "node voxicode.js"
+    "start": "node app.js"
   },
   "dependencies": {
-    "discord.js": "^12.5.1",
+    "canvacord": "^5.2.3",
+    "discord-buttons": "^4.0.0",
+    "discord-canvas": "1.4.1",
+    "discord.js": "^13.1.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "hastebin-gen": "^2.0.5",
-    "http": "^0.0.0",
-    "https": "^1.0.0",
     "moment": "^2.29.1",
-    "moment-duration-format": "^2.3.2",
-    "node-fetch": "^2.6.1",
-    "quick.db": "^7.1.3"
+    "mongoose": "^6.0.8"
   },
   "engines": {
-    "node": "12.x",
-    "author": "Voxic",
-    "license": "ISC",
-    "description": "Voxic Code Uptime Bot Altyapısı"
+    "node": "16.x"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "gweep",
+    "creative",
+    "discord"
+  ]
 }
